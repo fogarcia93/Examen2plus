@@ -1,0 +1,56 @@
+<%= form_for(contacto) do |f| %>
+  <% if contacto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contacto.errors.count, "error") %> prohibited this contacto from being saved:</h2>
+
+      <ul>
+      <% contacto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="row">
+     <div class="input-field col s2">
+    <%= f.label :contact_id %>
+    <%= f.number_field :contact_id %>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s10">>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s10">>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    </div>
+    </div>
+
+    <div class="file-field input-field">
+    <div class="btn">
+      <span>Imagen</span>
+        <%= f.file_field :imagen %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s10">>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  </div>
+
+
+ <div class="actions">
+    <%= f.submit "Guardar",class: 'waves-effect waves-ligt btn' %>
+  </div>
+<% end %>

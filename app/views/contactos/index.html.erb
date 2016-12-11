@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contactos</h1>
+<div class="parallax-container">
+<div class="parallax"><img src="pa1.png"></div>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Contact</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Imagen</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contactos.each do |contacto| %>
+      <tr>
+        <td><%= contacto.contact_id %></td>
+        <td><%= contacto.name %></td>
+        <td><%= contacto.email %></td>
+        <td>
+          <img src="<%= disco.imagen %>" width="300"/>
+        </td>
+        <td><%= contacto.phone %></td>
+        <td>
+	<a href= "/contactos/<%= contacto.id%>"class="waves-effect waves-light btn">Mostrar</a>
+	</td>
+        <td>
+	<a href= "/contactos/<%= contacto.id%>/edit"class="waves-effect waves-light btn">Editar</a>
+	</td>
+        <td>
+	<a data-method="delete" href =/contactos/<%= contato.id %> data-confirm="Seguro?" class="waves-effect waves-light btn">Eliminar</a>	
+	</td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+  
+
+<a href="/books/new"class="waves-effect waves-light btn">Nuevo Contacto</a>
