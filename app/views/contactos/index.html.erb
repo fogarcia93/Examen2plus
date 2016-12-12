@@ -7,11 +7,12 @@
 <table class="highlight">
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Creador</th>
       <th>Nombre</th>
       <th>Correo</th>
       <th>Imagen</th>
       <th>Telefono</th>
+      <th>Opciones de Control</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +20,16 @@
   <tbody>
     <% @contactos.each do |contacto| %>
       <tr>
-        <td><%= contacto.contact_id %></td>
+      	<td>
+       	<% if Contact.find_by_id(contacto.contact_id) %>
+       	<%= contacto.contact.email %>
+       	<% end %>
+        </td>
+        
         <td><%= contacto.name %></td>
         <td><%= contacto.email %></td>
         <td>
-          <img src="<%= contacto.imagen %>" width="150"/>
+          <img src="<%= contacto.imagen %>" width="100"/>
         </td>
         <td><%= contacto.phone %></td>
         <td>
