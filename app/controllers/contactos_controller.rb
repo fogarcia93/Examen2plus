@@ -6,7 +6,7 @@ class ContactosController < ApplicationController
   def index
    
     if current_contact
-  	@contactos = current_contact.contacto
+  	@contactos = current_contact.contactos
 	else
   	@contactos = Contacto.all
   	end
